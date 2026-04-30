@@ -1,606 +1,456 @@
-<!doctype html>🏆 Dota 1 Versus - Campeonato 1 vs 1
-Sorteo aleatorio, 114 héroes para cada jugador, historial, resultado y ganador.
-⚔️ Jugadores
-Jugador 1
-Nombre jugador 1
-Jugador 2
-Nombre jugador 2
-Presioná “Sortear ronda”
-🎲 Sortear ronda ↩ Deshacer última 🔄 Reiniciar todo
-Total por jugador: 114
-J1 usados: 0
-J1 pendientes: 114
-J2 usados: 0
-J2 pendientes: 114
-🏁 Cargar resultado de la ronda
-Ganador
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dota 1 Versus - Campeonato</title>
+<style>
+:root {
+  --fondo:#0f172a;
+  --panel:#1f2937;
+  --panel2:#111827;
+  --borde:#475569;
+  --texto:#f8fafc;
+  --suave:#cbd5e1;
+  --oro:#f59e0b;
+  --verde:#22c55e;
+  --rojo:#ef4444;
+  --azul:#38bdf8;
+  --violeta:#c084fc;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#020617,#111827);
+  color:var(--texto);
+}
+header{
+  text-align:center;
+  padding:26px 15px;
+  background:#020617;
+  border-bottom:3px solid var(--oro);
+}
+h1{margin:0;font-size:30px}
+.sub{color:var(--suave);margin-top:8px}
+main{max-width:1300px;margin:auto;padding:16px;display:grid;gap:16px}
+.card{
+  background:rgba(31,41,55,.96);
+  border:1px solid var(--borde);
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 8px 28px rgba(0,0,0,.35);
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+label{display:block;font-weight:bold;margin-bottom:5px}
+input,select,textarea{
+  width:100%;
+  padding:11px;
+  border-radius:10px;
+  border:1px solid #64748b;
+  background:#020617;
+  color:white;
+}
+button{
+  border:0;
+  border-radius:12px;
+  padding:12px 15px;
+  margin:5px;
+  cursor:pointer;
+  font-weight:bold;
+  background:var(--oro);
+  color:#111827;
+}
+button.verde{background:var(--verde);color:#052e16}
+button.rojo{background:var(--rojo);color:white}
+button.gris{background:#94a3b8;color:#111827}
+.resultado{
+  background:#020617;
+  border:2px dashed var(--oro);
+  border-radius:16px;
+  padding:18px;
+  text-align:center;
+  font-size:25px;
+  font-weight:900;
+  line-height:1.45;
+  margin-top:12px;
+}
+.p1{color:var(--azul)}
+.p2{color:var(--violeta)}
+.stats{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.pill{background:#020617;border:1px solid #64748b;padding:9px 13px;border-radius:999px}
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(430px,1fr));gap:16px}
+.heroes{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;max-height:380px;overflow:auto}
+.hero{
+  background:#020617;
+  border:1px solid var(--borde);
+  padding:9px;
+  border-radius:10px;
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
+}
+.hero.used{text-decoration:line-through;opacity:.45;background:#2a1010;border-color:#7f1d1d}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px;border-bottom:1px solid var(--borde);text-align:left}
+th{color:#fde68a}
+.mini{font-size:12px;color:var(--suave)}
+textarea{min-height:210px;font-family:monospace}
+@media(max-width:600px){
+  .board{grid-template-columns:1fr}
+  .resultado{font-size:21px}
+  h1{font-size:24px}
+}
+</style>
 
-Elegir ganador
-Comentario / resultado
-Ej: ganó por first blood, 2-1, etc.
-✅ Guardar resultado
-📊 Marcador general
-Jugador 1: 0
-Jugador 2: 0
-Empates: 0
-Rondas jugadas: 0
-📘 Héroes Jugador 1
-Click en un héroe para tachar o destachar manualmente.
-Abaddon
-○
-Alchemist
-○
-Ancient Apparition
-○
-Anti-Mage
-○
-Axe
-○
-Bane
-○
-Batrider
-○
-Beastmaster
-○
-Bloodseeker
-○
-Bounty Hunter
-○
-Brewmaster
-○
-Bristleback
-○
-Broodmother
-○
-Centaur Warrunner
-○
-Chaos Knight
-○
-Chen
-○
-Clinkz
-○
-Clockwerk
-○
-Crystal Maiden
-○
-Dark Seer
-○
-Dazzle
-○
-Death Prophet
-○
-Disruptor
-○
-Doom
-○
-Dragon Knight
-○
-Drow Ranger
-○
-Earthshaker
-○
-Earth Spirit
-○
-Elder Titan
-○
-Ember Spirit
-○
-Enchantress
-○
-Enigma
-○
-Faceless Void
-○
-Gyrocopter
-○
-Huskar
-○
-Invoker
-○
-Io / Wisp
-○
-Jakiro
-○
-Juggernaut
-○
-Keeper of the Light
-○
-Kunkka
-○
-Legion Commander
-○
-Leshrac
-○
-Lich
-○
-Lifestealer
-○
-Lina
-○
-Lion
-○
-Lone Druid
-○
-Luna
-○
-Lycan
-○
-Magnus
-○
-Medusa
-○
-Meepo
-○
-Mirana
-○
-Morphling
-○
-Naga Siren
-○
-Nature's Prophet
-○
-Necrophos
-○
-Nyx Assassin
-○
-Night Stalker
-○
-Outworld Destroyer
-○
-Ogre Magi
-○
-Omniknight
-○
-Oracle
-○
-Phantom Assassin
-○
-Phantom Lancer
-○
-Phoenix
-○
-Underlord
-○
-Puck
-○
-Pudge
-○
-Pugna
-○
-Queen of Pain
-○
-Razor
-○
-Riki
-○
-Rubick
-○
-Sand King
-○
-Shadow Demon
-○
-Shadow Fiend
-○
-Shadow Shaman
-○
-Silencer
-○
-Wraith King
-○
-Skywrath Mage
-○
-Slardar
-○
-Slark
-○
-Sniper
-○
-Spectre
-○
-Spirit Breaker
-○
-Storm Spirit
-○
-Sven
-○
-Techies
-○
-Templar Assassin
-○
-Terrorblade
-○
-Tidehunter
-○
-Timbersaw
-○
-Tinker
-○
-Tiny
-○
-Treant Protector
-○
-Troll Warlord
-○
-Tusk
-○
-Undying
-○
-Ursa
-○
-Vengeful Spirit
-○
-Venomancer
-○
-Viper
-○
-Visage
-○
-Warlock
-○
-Weaver
-○
-Windranger
-○
-Witch Doctor
-○
-Zeus
-○
-Arc Warden
-○
-Winter Wyvern
-○
-Bristleback 2
-○
-Admiral
-○
-📕 Héroes Jugador 2
-Click en un héroe para tachar o destachar manualmente.
-Abaddon
-○
-Alchemist
-○
-Ancient Apparition
-○
-Anti-Mage
-○
-Axe
-○
-Bane
-○
-Batrider
-○
-Beastmaster
-○
-Bloodseeker
-○
-Bounty Hunter
-○
-Brewmaster
-○
-Bristleback
-○
-Broodmother
-○
-Centaur Warrunner
-○
-Chaos Knight
-○
-Chen
-○
-Clinkz
-○
-Clockwerk
-○
-Crystal Maiden
-○
-Dark Seer
-○
-Dazzle
-○
-Death Prophet
-○
-Disruptor
-○
-Doom
-○
-Dragon Knight
-○
-Drow Ranger
-○
-Earthshaker
-○
-Earth Spirit
-○
-Elder Titan
-○
-Ember Spirit
-○
-Enchantress
-○
-Enigma
-○
-Faceless Void
-○
-Gyrocopter
-○
-Huskar
-○
-Invoker
-○
-Io / Wisp
-○
-Jakiro
-○
-Juggernaut
-○
-Keeper of the Light
-○
-Kunkka
-○
-Legion Commander
-○
-Leshrac
-○
-Lich
-○
-Lifestealer
-○
-Lina
-○
-Lion
-○
-Lone Druid
-○
-Luna
-○
-Lycan
-○
-Magnus
-○
-Medusa
-○
-Meepo
-○
-Mirana
-○
-Morphling
-○
-Naga Siren
-○
-Nature's Prophet
-○
-Necrophos
-○
-Nyx Assassin
-○
-Night Stalker
-○
-Outworld Destroyer
-○
-Ogre Magi
-○
-Omniknight
-○
-Oracle
-○
-Phantom Assassin
-○
-Phantom Lancer
-○
-Phoenix
-○
-Underlord
-○
-Puck
-○
-Pudge
-○
-Pugna
-○
-Queen of Pain
-○
-Razor
-○
-Riki
-○
-Rubick
-○
-Sand King
-○
-Shadow Demon
-○
-Shadow Fiend
-○
-Shadow Shaman
-○
-Silencer
-○
-Wraith King
-○
-Skywrath Mage
-○
-Slardar
-○
-Slark
-○
-Sniper
-○
-Spectre
-○
-Spirit Breaker
-○
-Storm Spirit
-○
-Sven
-○
-Techies
-○
-Templar Assassin
-○
-Terrorblade
-○
-Tidehunter
-○
-Timbersaw
-○
-Tinker
-○
-Tiny
-○
-Treant Protector
-○
-Troll Warlord
-○
-Tusk
-○
-Undying
-○
-Ursa
-○
-Vengeful Spirit
-○
-Venomancer
-○
-Viper
-○
-Visage
-○
-Warlock
-○
-Weaver
-○
-Windranger
-○
-Witch Doctor
-○
-Zeus
-○
-Arc Warden
-○
-Winter Wyvern
-○
-Bristleback 2
-○
-Admiral
-○
-📜 Historial del campeonato
-#	Jugador 1	Héroe J1	Jugador 2	Héroe J2	Ganador	Comentario
-⚙️ Lista editable de héroes
-Hay 114 espacios cargados. Si un nombre no coincide con tu mapa, podés editarlo. Un héroe por línea.
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f172a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Dota Versus">
+<link rel="apple-touch-icon" href="icon-192.png">
 
-Abaddon
-Alchemist
-Ancient Apparition
-Anti-Mage
-Axe
-Bane
-Batrider
-Beastmaster
-Bloodseeker
-Bounty Hunter
-Brewmaster
-Bristleback
-Broodmother
-Centaur Warrunner
-Chaos Knight
-Chen
-Clinkz
-Clockwerk
-Crystal Maiden
-Dark Seer
-Dazzle
-Death Prophet
-Disruptor
-Doom
-Dragon Knight
-Drow Ranger
-Earthshaker
-Earth Spirit
-Elder Titan
-Ember Spirit
-Enchantress
-Enigma
-Faceless Void
-Gyrocopter
-Huskar
-Invoker
-Io / Wisp
-Jakiro
-Juggernaut
-Keeper of the Light
-Kunkka
-Legion Commander
-Leshrac
-Lich
-Lifestealer
-Lina
-Lion
-Lone Druid
-Luna
-Lycan
-Magnus
-Medusa
-Meepo
-Mirana
-Morphling
-Naga Siren
-Nature's Prophet
-Necrophos
-Nyx Assassin
-Night Stalker
-Outworld Destroyer
-Ogre Magi
-Omniknight
-Oracle
-Phantom Assassin
-Phantom Lancer
-Phoenix
-Underlord
-Puck
-Pudge
-Pugna
-Queen of Pain
-Razor
-Riki
-Rubick
-Sand King
-Shadow Demon
-Shadow Fiend
-Shadow Shaman
-Silencer
-Wraith King
-Skywrath Mage
-Slardar
-Slark
-Sniper
-Spectre
-Spirit Breaker
-Storm Spirit
-Sven
-Techies
-Templar Assassin
-Terrorblade
-Tidehunter
-Timbersaw
-Tinker
-Tiny
-Treant Protector
-Troll Warlord
-Tusk
-Undying
-Ursa
-Vengeful Spirit
-Venomancer
-Viper
-Visage
-Warlock
-Weaver
-Windranger
-Witch Doctor
-Zeus
-Arc Warden
-Winter Wyvern
-Bristleback 2
-Admiral
- Guardar lista de héroes</html>
+</head>
+<body>
+
+<header>
+  <h1>🏆 Dota 1 Versus - Campeonato 1 vs 1</h1>
+  <div class="sub">Sorteo aleatorio, 114 héroes para cada jugador, historial, resultado y ganador.</div>
+</header>
+
+<main>
+
+<section class="card">
+  <h2>⚔️ Jugadores</h2>
+  <div class="grid">
+    <div>
+      <label>Jugador 1</label>
+      <input id="nombre1" placeholder="Nombre jugador 1" oninput="guardarNombres()">
+    </div>
+    <div>
+      <label>Jugador 2</label>
+      <input id="nombre2" placeholder="Nombre jugador 2" oninput="guardarNombres()">
+    </div>
+  </div>
+
+  <div class="resultado" id="rondaActual">Presioná “Sortear ronda”</div>
+
+  <div style="text-align:center">
+    <button onclick="sortearRonda()">🎲 Sortear ronda</button>
+    <button class="gris" onclick="deshacerUltima()">↩ Deshacer última</button>
+    <button class="rojo" onclick="reiniciarTodo()">🔄 Reiniciar todo</button>
+  </div>
+
+  <div class="stats">
+    <div class="pill">Total por jugador: <b id="totalHeroes">114</b></div>
+    <div class="pill p1">J1 usados: <b id="usados1">0</b></div>
+    <div class="pill p1">J1 pendientes: <b id="pendientes1">114</b></div>
+    <div class="pill p2">J2 usados: <b id="usados2">0</b></div>
+    <div class="pill p2">J2 pendientes: <b id="pendientes2">114</b></div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>🏁 Cargar resultado de la ronda</h2>
+  <div class="grid">
+    <div>
+      <label>Ganador</label>
+      <select id="ganador">
+        <option value="">Elegir ganador</option>
+        <option value="1">Jugador 1</option>
+        <option value="2">Jugador 2</option>
+        <option value="empate">Empate / sin ganador</option>
+      </select>
+    </div>
+    <div>
+      <label>Comentario / resultado</label>
+      <input id="comentario" placeholder="Ej: ganó por first blood, 2-1, etc.">
+    </div>
+  </div>
+  <div style="text-align:center">
+    <button class="verde" onclick="guardarResultado()">✅ Guardar resultado</button>
+  </div>
+</section>
+
+<section class="card">
+  <h2>📊 Marcador general</h2>
+  <div class="stats">
+    <div class="pill p1"><span id="marcadorNombre1">Jugador 1</span>: <b id="victorias1">0</b></div>
+    <div class="pill p2"><span id="marcadorNombre2">Jugador 2</span>: <b id="victorias2">0</b></div>
+    <div class="pill">Empates: <b id="empates">0</b></div>
+    <div class="pill">Rondas jugadas: <b id="rondasJugadas">0</b></div>
+  </div>
+</section>
+
+<section class="board">
+  <div class="card">
+    <h2 class="p1">📘 Héroes Jugador 1</h2>
+    <div class="mini">Click en un héroe para tachar o destachar manualmente.</div>
+    <div class="heroes" id="lista1"></div>
+  </div>
+
+  <div class="card">
+    <h2 class="p2">📕 Héroes Jugador 2</h2>
+    <div class="mini">Click en un héroe para tachar o destachar manualmente.</div>
+    <div class="heroes" id="lista2"></div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>📜 Historial del campeonato</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Jugador 1</th>
+        <th>Héroe J1</th>
+        <th>Jugador 2</th>
+        <th>Héroe J2</th>
+        <th>Ganador</th>
+        <th>Comentario</th>
+      </tr>
+    </thead>
+    <tbody id="historial"></tbody>
+  </table>
+</section>
+
+<section class="card">
+  <h2>⚙️ Lista editable de héroes</h2>
+  <p class="mini">Hay 114 espacios cargados. Si un nombre no coincide con tu mapa, podés editarlo. Un héroe por línea.</p>
+  <textarea id="editorHeroes"></textarea>
+  <button class="verde" onclick="guardarListaHeroes()">Guardar lista de héroes</button>
+</section>
+
+</main>
+
+<script>
+const heroesBase = ['Abaddon', 'Alchemist', 'Ancient Apparition', 'Anti-Mage', 'Axe', 'Bane', 'Batrider', 'Beastmaster', 'Bloodseeker', 'Bounty Hunter', 'Brewmaster', 'Bristleback', 'Broodmother', 'Centaur Warrunner', 'Chaos Knight', 'Chen', 'Clinkz', 'Clockwerk', 'Crystal Maiden', 'Dark Seer', 'Dazzle', 'Death Prophet', 'Disruptor', 'Doom', 'Dragon Knight', 'Drow Ranger', 'Earthshaker', 'Earth Spirit', 'Elder Titan', 'Ember Spirit', 'Enchantress', 'Enigma', 'Faceless Void', 'Gyrocopter', 'Huskar', 'Invoker', 'Io / Wisp', 'Jakiro', 'Juggernaut', 'Keeper of the Light', 'Kunkka', 'Legion Commander', 'Leshrac', 'Lich', 'Lifestealer', 'Lina', 'Lion', 'Lone Druid', 'Luna', 'Lycan', 'Magnus', 'Medusa', 'Meepo', 'Mirana', 'Morphling', 'Naga Siren', "Nature's Prophet", 'Necrophos', 'Nyx Assassin', 'Night Stalker', 'Outworld Destroyer', 'Ogre Magi', 'Omniknight', 'Oracle', 'Phantom Assassin', 'Phantom Lancer', 'Phoenix', 'Underlord', 'Puck', 'Pudge', 'Pugna', 'Queen of Pain', 'Razor', 'Riki', 'Rubick', 'Sand King', 'Shadow Demon', 'Shadow Fiend', 'Shadow Shaman', 'Silencer', 'Wraith King', 'Skywrath Mage', 'Slardar', 'Slark', 'Sniper', 'Spectre', 'Spirit Breaker', 'Storm Spirit', 'Sven', 'Techies', 'Templar Assassin', 'Terrorblade', 'Tidehunter', 'Timbersaw', 'Tinker', 'Tiny', 'Treant Protector', 'Troll Warlord', 'Tusk', 'Undying', 'Ursa', 'Vengeful Spirit', 'Venomancer', 'Viper', 'Visage', 'Warlock', 'Weaver', 'Windranger', 'Witch Doctor', 'Zeus', 'Arc Warden', 'Winter Wyvern', 'Bristleback 2', 'Admiral'];
+
+let heroes = JSON.parse(localStorage.getItem("dota_heroes")) || heroesBase;
+let usados1 = JSON.parse(localStorage.getItem("dota_usados1")) || [];
+let usados2 = JSON.parse(localStorage.getItem("dota_usados2")) || [];
+let historial = JSON.parse(localStorage.getItem("dota_historial")) || [];
+let rondaPendiente = JSON.parse(localStorage.getItem("dota_rondaPendiente")) || null;
+
+document.getElementById("nombre1").value = localStorage.getItem("dota_nombre1") || "";
+document.getElementById("nombre2").value = localStorage.getItem("dota_nombre2") || "";
+
+function n1(){ return document.getElementById("nombre1").value || "Jugador 1"; }
+function n2(){ return document.getElementById("nombre2").value || "Jugador 2"; }
+
+function guardarNombres(){
+  localStorage.setItem("dota_nombre1", document.getElementById("nombre1").value);
+  localStorage.setItem("dota_nombre2", document.getElementById("nombre2").value);
+  render();
+}
+
+function guardar(){
+  localStorage.setItem("dota_heroes", JSON.stringify(heroes));
+  localStorage.setItem("dota_usados1", JSON.stringify(usados1));
+  localStorage.setItem("dota_usados2", JSON.stringify(usados2));
+  localStorage.setItem("dota_historial", JSON.stringify(historial));
+  localStorage.setItem("dota_rondaPendiente", JSON.stringify(rondaPendiente));
+}
+
+function elegirPendiente(usados){
+  const pendientes = heroes.filter(h => !usados.includes(h));
+  if(pendientes.length === 0) return null;
+  return pendientes[Math.floor(Math.random() * pendientes.length)];
+}
+
+function sortearRonda(){
+  const h1 = elegirPendiente(usados1);
+  const h2 = elegirPendiente(usados2);
+
+  if(!h1 && !h2){
+    document.getElementById("rondaActual").innerHTML = "🏁 Los dos jugadores completaron todos los héroes.";
+    return;
+  }
+
+  if(h1) usados1.push(h1);
+  if(h2) usados2.push(h2);
+
+  rondaPendiente = {
+    jugador1:n1(),
+    jugador2:n2(),
+    heroe1:h1 || "COMPLETADO",
+    heroe2:h2 || "COMPLETADO",
+    ganador:"",
+    comentario:""
+  };
+
+  document.getElementById("ganador").value = "";
+  document.getElementById("comentario").value = "";
+
+  guardar();
+  render();
+}
+
+function guardarResultado(){
+  if(!rondaPendiente){
+    alert("Primero tenés que sortear una ronda.");
+    return;
+  }
+
+  const ganador = document.getElementById("ganador").value;
+  const comentario = document.getElementById("comentario").value;
+
+  if(!ganador){
+    alert("Elegí un ganador antes de guardar.");
+    return;
+  }
+
+  rondaPendiente.ganador = ganador;
+  rondaPendiente.comentario = comentario;
+
+  historial.push(rondaPendiente);
+  rondaPendiente = null;
+
+  document.getElementById("ganador").value = "";
+  document.getElementById("comentario").value = "";
+
+  guardar();
+  render();
+}
+
+function deshacerUltima(){
+  if(rondaPendiente){
+    if(rondaPendiente.heroe1 !== "COMPLETADO") usados1 = usados1.filter(h => h !== rondaPendiente.heroe1);
+    if(rondaPendiente.heroe2 !== "COMPLETADO") usados2 = usados2.filter(h => h !== rondaPendiente.heroe2);
+    rondaPendiente = null;
+    guardar();
+    render();
+    return;
+  }
+
+  const ultima = historial.pop();
+  if(!ultima) return;
+
+  if(ultima.heroe1 !== "COMPLETADO") usados1 = usados1.filter(h => h !== ultima.heroe1);
+  if(ultima.heroe2 !== "COMPLETADO") usados2 = usados2.filter(h => h !== ultima.heroe2);
+
+  guardar();
+  render();
+}
+
+function reiniciarTodo(){
+  if(confirm("¿Seguro que querés borrar todo el campeonato?")){
+    usados1 = [];
+    usados2 = [];
+    historial = [];
+    rondaPendiente = null;
+    guardar();
+    render();
+  }
+}
+
+function toggleHero(player, hero){
+  if(player === 1){
+    usados1 = usados1.includes(hero) ? usados1.filter(h => h !== hero) : [...usados1, hero];
+  } else {
+    usados2 = usados2.includes(hero) ? usados2.filter(h => h !== hero) : [...usados2, hero];
+  }
+  guardar();
+  render();
+}
+
+function renderLista(id, usados, player){
+  const caja = document.getElementById(id);
+  caja.innerHTML = "";
+  heroes.forEach(hero => {
+    const div = document.createElement("div");
+    div.className = "hero " + (usados.includes(hero) ? "used" : "");
+    div.innerHTML = "<span>" + hero + "</span><span>" + (usados.includes(hero) ? "✖" : "○") + "</span>";
+    div.onclick = () => toggleHero(player, hero);
+    caja.appendChild(div);
+  });
+}
+
+function textoGanador(valor){
+  if(valor === "1") return n1();
+  if(valor === "2") return n2();
+  if(valor === "empate") return "Empate";
+  return "";
+}
+
+function renderHistorial(){
+  const body = document.getElementById("historial");
+  body.innerHTML = "";
+
+  historial.forEach((r, i) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML =
+      "<td>" + (i+1) + "</td>" +
+      "<td>" + r.jugador1 + "</td>" +
+      "<td>" + r.heroe1 + "</td>" +
+      "<td>" + r.jugador2 + "</td>" +
+      "<td>" + r.heroe2 + "</td>" +
+      "<td>" + (r.ganador === "1" ? r.jugador1 : r.ganador === "2" ? r.jugador2 : "Empate") + "</td>" +
+      "<td>" + (r.comentario || "") + "</td>";
+    body.appendChild(tr);
+  });
+}
+
+function renderMarcador(){
+  let v1 = historial.filter(r => r.ganador === "1").length;
+  let v2 = historial.filter(r => r.ganador === "2").length;
+  let emp = historial.filter(r => r.ganador === "empate").length;
+
+  document.getElementById("marcadorNombre1").textContent = n1();
+  document.getElementById("marcadorNombre2").textContent = n2();
+  document.getElementById("victorias1").textContent = v1;
+  document.getElementById("victorias2").textContent = v2;
+  document.getElementById("empates").textContent = emp;
+  document.getElementById("rondasJugadas").textContent = historial.length;
+}
+
+function guardarListaHeroes(){
+  const nuevaLista = document.getElementById("editorHeroes").value
+    .split("\n")
+    .map(h => h.trim())
+    .filter(h => h.length > 0);
+
+  heroes = nuevaLista;
+  usados1 = usados1.filter(h => heroes.includes(h));
+  usados2 = usados2.filter(h => heroes.includes(h));
+
+  guardar();
+  render();
+}
+
+function render(){
+  document.getElementById("editorHeroes").value = heroes.join("\n");
+  document.getElementById("totalHeroes").textContent = heroes.length;
+  document.getElementById("usados1").textContent = usados1.length;
+  document.getElementById("pendientes1").textContent = heroes.length - usados1.length;
+  document.getElementById("usados2").textContent = usados2.length;
+  document.getElementById("pendientes2").textContent = heroes.length - usados2.length;
+
+  renderLista("lista1", usados1, 1);
+  renderLista("lista2", usados2, 2);
+  renderHistorial();
+  renderMarcador();
+
+  if(rondaPendiente){
+    document.getElementById("rondaActual").innerHTML =
+      "<span class='p1'>" + rondaPendiente.jugador1 + ": " + rondaPendiente.heroe1 + "</span><br>⚔️<br>" +
+      "<span class='p2'>" + rondaPendiente.jugador2 + ": " + rondaPendiente.heroe2 + "</span><br>" +
+      "<span class='mini'>Cargá el ganador y guardá el resultado.</span>";
+  } else {
+    document.getElementById("rondaActual").innerHTML = "Presioná “Sortear ronda”";
+  }
+}
+
+render();
+</script>
+
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker.register("service-worker.js");
+  });
+}
+</script>
+
+</body>
+</html>
